@@ -91,11 +91,11 @@ puppet  IN      A       $ipaddr
   class { 'razor':
     address => $ipaddr,
     tag     => ['razor'],
-    require => Class['tftp'], 
+    require => Class['tftp'],
   }
-  
+
   ### run tftp as a service
-  class {'tftp': 
+  class {'tftp':
     inetd => false,
     tag   => ['razor'],
   }
@@ -158,7 +158,7 @@ puppet  IN      A       $ipaddr
     ensure   => present,
     type     => 'os',
     version  => '12.04',
-    source   => '/tmp/images/ubuntu-12.04-server-amd64.iso',
+    source   => '/vagrant/ubuntu-12.04-server-amd64.iso',
     tag      => ['ubuntu'],
   }
 
